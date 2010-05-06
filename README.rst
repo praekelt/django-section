@@ -25,7 +25,9 @@ Add SECTIONS value to your settings file in the form::
 
 Usage
 -----
+
 If you're using generic views you'll now automagically have a *section* variable added to context and available in your templates.
 
 Otherwise have a look at RequestContext objects and how to use them:
+    
     http://docs.djangoproject.com/en/dev/ref/templates/api/#id1
