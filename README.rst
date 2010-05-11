@@ -5,7 +5,7 @@ Django Section
 Installation
 ------------
 
-Add *section.context_processors.section* to TEMPLATE_CONTEXT_PROCESSORS in your settings file::
+#. Add *section.context_processors.section* to TEMPLATE_CONTEXT_PROCESSORS in your settings file::
 
     TEMPLATE_CONTEXT_PROCESSORS = (
         "django.contrib.auth.context_processors.auth",
@@ -15,7 +15,7 @@ Add *section.context_processors.section* to TEMPLATE_CONTEXT_PROCESSORS in your 
         "django.contrib.messages.context_processors.messages",
         "section.context_processors.section")
 
-Add SECTIONS value to your settings file in the form::
+#. Add SECTIONS value to your settings file in the form::
 
     # Tuple of dictionaries used to match URL pattern names to site sections. 
     # example: ({'name': '<section name>', 'matching_pattern_names': ('<url_name1>', '<url_name2>')},)
