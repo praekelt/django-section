@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-section',
-    version='0.0.1',
+    version='0.0.2',
     description='Django app for determining site section by request.',
     long_description = open('README.rst', 'r').read(),
     author='Praekelt Foundation',
@@ -20,4 +20,8 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
+    install_requires = [
+        'django-snippetscream',
+    ],
+    zip_safe=False,
 )
