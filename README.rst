@@ -26,7 +26,7 @@ Installation
 Usage
 -----
 
-If you're using generic views or `RequestContext <http://docs.djangoproject.com/en/dev/ref/templates/api/#id1>_` you'll now automagically have a ``section`` variable added to context and available in your templates containing the value of ``name`` as defined for the current view in your ``SECTIONS`` setting. 
+If you're using generic views or `RequestContext <http://docs.djangoproject.com/en/dev/ref/templates/api/#id1>`_ you'll now automagically have a ``section`` variable added to context and available in your templates containing the value of ``name`` as defined for the current view in your ``SECTIONS`` setting. 
 
 **NOTE**: If the current path can not be resolved to a defined section, the first section as defined in the ``SECTION`` settings is returned. This allows you to setup a global fallback section, i.e. *home*.
 
