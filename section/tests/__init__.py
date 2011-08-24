@@ -12,23 +12,25 @@ class ContextProcessorsTestCase(unittest.TestCase):
         request = RequestFactory().get('/some/url/')
         context = context_processors.section(request)
         self.failIf(context)
-        
-        # With SECTIONS setting not containing section for requested path result should be first defined section.
+
+        # With SECTIONS setting not containing section for requested path
+        # result should be first defined section.
         settings.SECTIONS = (
             {'name': 'first', 'matching_pattern_names': ('undefined',)},
-            {'name': 'match', 'matching_pattern_names': ('matched_section', 'matched_section_with_second_path',)},
+            {'name': 'match', 'matching_pattern_names': (\
+                'matched_section', 'matched_section_with_second_path',)},
         )
         context = context_processors.section(request)
         self.failUnlessEqual(context['section'], 'first')
-        
-        # With SECTIONS setting containing section for requested path result should be matched name.
+
+        # With SECTIONS setting containing section for requested path
+        # result should be matched name.
         request = RequestFactory().get('/some/other/url/')
         context = context_processors.section(request)
         self.failUnlessEqual(context['section'], 'match')
-        
-        # With SECTIONS setting containing section for multiple paths result should be matched name.
+
+        # With SECTIONS setting containing section for multiple paths
+        # result should be matched name.
         request = RequestFactory().get('/some/other/matching/url/')
         context = context_processors.section(request)
         self.failUnlessEqual(context['section'], 'match')
-
-    
