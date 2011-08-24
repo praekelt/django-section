@@ -7,6 +7,7 @@ if not settings.configured:
         INSTALLED_APPS=[
             'section',
         ],
+        ROOT_URLCONF='section.tests.urls',
     )
 
 from django.test.simple import run_tests
