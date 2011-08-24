@@ -14,7 +14,7 @@ class TestRunner(test):
 
 setup(
     name='django-section',
-    version='0.0.2',
+    version='0.0.3',
     description='Django app for determining site section by request.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Praekelt Foundation',
@@ -25,6 +25,9 @@ setup(
     include_package_data=True,
     test_suite='section.tests',
     cmdclass={'test': TestRunner},
+    install_requires=[
+        'django-snippetscream',
+    ],
     tests_require=[
         'django',
     ],
