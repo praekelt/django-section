@@ -1,16 +1,10 @@
 from setuptools import setup, find_packages
 from setuptools.command.test import test
 
-
-class TestRunner(test):
-    def run(self, *args, **kwargs):
-        if self.distribution.install_requires:
-            self.distribution.fetch_build_eggs(\
-                    self.distribution.install_requires)
-        if self.distribution.tests_require:
-            self.distribution.fetch_build_eggs(self.distribution.tests_require)
-        from runtests import runtests
-        runtests()
+def run_tests(self):
+    from setuptest.runtests import runtests
+    return runtests(self)
+test.run_tests = run_tests
 
 setup(
     name='django-section',
@@ -24,12 +18,11 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     test_suite='section.tests',
-    cmdclass={'test': TestRunner},
     install_requires=[
         'django-snippetscream',
     ],
     tests_require=[
-        'django',
+        'django-setuptest',
     ],
     classifiers=[
         "Programming Language :: Python",
